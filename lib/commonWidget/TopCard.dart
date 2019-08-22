@@ -41,7 +41,6 @@ class _TopCardState extends State<TopCard> {
               singleItem(widget.topList.topHorizontalList[0]),
               singleItem(widget.topList.topHorizontalList[1]),
               singleItem(widget.topList.topHorizontalList[2]),
-
               more(),
             ],
           ),
