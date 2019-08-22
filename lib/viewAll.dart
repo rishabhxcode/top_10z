@@ -78,6 +78,7 @@ class _ViewAllState extends State<ViewAll> {
               ],
             ),
             Container(
+              alignment: Alignment.topLeft,
               height: scrnh - scrnh / 1.6,
               width: scrnw,
               color: Colors.grey.shade300,
