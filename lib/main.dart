@@ -23,7 +23,46 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage>  with SingleTickerProviderStateMixin{
-  
+var scrnh;
+var scrnw;
+
+Widget more(){
+  return Container(
+    alignment: Alignment.center,
+    height: scrnh/4.5,
+    width: scrnw/4.5,
+    decoration: BoxDecoration(
+      color: Colors.grey.shade300,
+      borderRadius: BorderRadius.all(Radius.circular(35)),
+      border: Border.all(color: Colors.blueGrey)
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text('View \n All', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.deepPurple) ,
+            textAlign: TextAlign.center,
+        ),
+        Icon(Icons.arrow_forward, size: 36, color: Colors.deepPurple,)
+      ],
+    ),
+  );
+}
+
+Widget singleItem(String network){
+  return Container(
+    margin: EdgeInsets.only(right: 6, left: 6),
+    height: scrnh/4.5,
+    width: scrnh/4.5,
+    decoration: BoxDecoration(
+      image: DecorationImage(
+        image: NetworkImage(network),
+        fit: BoxFit.cover
+      ),
+      color: Colors.greenAccent,
+      borderRadius: BorderRadius.all(Radius.circular(35)),
+    ),
+  );
+}
 
   Widget topCard(){
     return Column(
@@ -42,26 +81,10 @@ class _MyHomePageState extends State<MyHomePage>  with SingleTickerProviderState
             // This next line does the trick.
             scrollDirection: Axis.horizontal,
             children: <Widget>[
-              Container(
-                width: 160.0,
-                color: Colors.red,
-              ),
-              Container(
-                width: 160.0,
-                color: Colors.blue,
-              ),
-              Container(
-                width: 160.0,
-                color: Colors.green,
-              ),
-              Container(
-                width: 160.0,
-                color: Colors.yellow,
-              ),
-              Container(
-                width: 160.0,
-                color: Colors.orange,
-              ),
+              singleItem('https://media3.mensxp.com/media/content/2019/Aug/ms-dhoni-plays-cricket-with-kids-in-leh1400-1566125185_1100x513.jpg'),
+              singleItem('https://c.ndtvimg.com/2019-07/d3doq9qo_virat-kohli-afp_625x300_10_July_19.jpg'),
+              singleItem('https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F12%2Ftop-10-movies-2018-categories-002.jpg?w=1600&cbr=1&q=90&fit=max'),
+             more(),
             ],
           ),
         ),
@@ -71,8 +94,8 @@ class _MyHomePageState extends State<MyHomePage>  with SingleTickerProviderState
 
   @override
   Widget build(BuildContext context) {
-    final scrnh = MediaQuery.of(context).size.height;
-    final scrnw = MediaQuery.of(context).size.height;
+    scrnh = MediaQuery.of(context).size.height;
+    scrnw = MediaQuery.of(context).size.height;
     return Scaffold(
       drawer: Drawer(
 
