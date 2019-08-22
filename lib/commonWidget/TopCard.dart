@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:top_10z/ten_details.dart';
+import 'package:top_10z/viewAll.dart';
 
-import '../ten_details.dart';
 
 class TopCard extends StatefulWidget {
 final  TopList topList;
@@ -105,7 +106,8 @@ class _TopCardState extends State<TopCard> {
       margin: EdgeInsets.only(left: 6),
       child: InkWell(
         onTap: () {
-
+          Route route = MaterialPageRoute(builder: (context)=> ViewAll(topList: widget.topList));
+          Navigator.push(context, route);
         },
         child: Container(
           alignment: Alignment.center,
