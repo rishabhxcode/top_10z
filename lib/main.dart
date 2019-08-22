@@ -60,15 +60,49 @@ Widget more(){
 Widget singleItem(String network){
   return Container(
     margin: EdgeInsets.only(right: 6, left: 6),
-    height: scrnh/4.5,
-    width: scrnh/4.5,
-    decoration: BoxDecoration(
-      image: DecorationImage(
-        image: NetworkImage(network),
-        fit: BoxFit.cover
-      ),
-      color: Colors.greenAccent,
-      borderRadius: BorderRadius.all(Radius.circular(35)),
+    child: Stack(
+      alignment: Alignment.bottomCenter,
+      children: <Widget>[
+        Container(
+          height: scrnh / 2,
+          width: scrnh / 4.5,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage(network),
+                fit: BoxFit.cover
+            ),
+            color: Colors.greenAccent,
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+          ),
+        ),
+        Container(
+          height: scrnh / 10,
+          width: scrnh / 4.5,
+          decoration: BoxDecoration(
+              color: Colors.yellow,
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20)),
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.transparent,
+                    Colors.black54,
+                    Colors.black
+                  ]
+              )
+
+          ),
+        ),
+        Positioned(
+          bottom: 6,
+          left: 4,
+          child: Text('10', style: TextStyle(fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Colors.white70
+          ),),
+        )
+      ],
     ),
   );
 }
@@ -85,7 +119,7 @@ Widget singleItem(String network){
           ),
         ),
         Container(
-          height: 150,
+          height: scrnh / 3.75,
           child: ListView(
             // This next line does the trick.
             scrollDirection: Axis.horizontal,
