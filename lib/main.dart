@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:top_10z/customClipper.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,22 +27,32 @@ var scrnw;
 
 Widget more(){
   return Container(
-    alignment: Alignment.center,
-    height: scrnh/4.5,
-    width: scrnw/4.5,
-    decoration: BoxDecoration(
-      color: Colors.grey.shade300,
-      borderRadius: BorderRadius.all(Radius.circular(35)),
-      border: Border.all(color: Colors.blueGrey)
-    ),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text('View \n All', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.deepPurple) ,
-            textAlign: TextAlign.center,
+    margin: EdgeInsets.only(left: 6),
+    child: InkWell(
+      onTap: () {
+
+      },
+      child: Container(
+        alignment: Alignment.center,
+        height: scrnh / 4.5,
+        width: scrnw / 4.5,
+        decoration: BoxDecoration(
+            color: Colors.grey.shade300,
+            borderRadius: BorderRadius.all(Radius.circular(35)),
+            border: Border.all(color: Colors.blueGrey)
         ),
-        Icon(Icons.arrow_forward, size: 36, color: Colors.deepPurple,)
-      ],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('View \n All', style: TextStyle(fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.deepPurple),
+              textAlign: TextAlign.center,
+            ),
+            Icon(Icons.arrow_forward, size: 36, color: Colors.deepPurple,)
+          ],
+        ),
+      ),
     ),
   );
 }
