@@ -32,6 +32,7 @@ class _CategoriesState extends State<Categories> {
     return Container(
       alignment: Alignment.bottomCenter,
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
         image: DecorationImage(
           fit: BoxFit.cover,
           image: NetworkImage(link),
