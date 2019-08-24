@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:top_10z/categories.dart';
 import 'package:top_10z/commonWidget/TopCard.dart';
+
 import 'ten_details.dart';
 
 void main() => runApp(MyApp());
@@ -46,6 +48,12 @@ var scrnw;
           IconButton(icon: Icon(Icons.search),
             onPressed: (){},
           ),
+          IconButton(icon: Icon(Icons.category),
+            onPressed: () {
+              Route route = MaterialPageRoute(
+                  builder: (context) => Categories());
+              Navigator.push(context, route);
+            },)
         ],
       ),
         body: Container(
